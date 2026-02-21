@@ -35,3 +35,15 @@ void bstInorder(BST *tree);
 void bstPreorder(BST *tree);
 void bstPostorder(BST *tree);
 
+// TASK C
+int bstHeightRecursive(Node* root);
+int bstHeight(BST* tree);
+
+int bstSizeRecursive(Node* root);
+int bstSize(BST* tree);
+
+//if tree is empty bstMin will return warning and stop the program
+int bstMin(BST* tree);
+
+//if tree is empty bstMax will return warning and stop the program
+int bstMax(BST* tree);
