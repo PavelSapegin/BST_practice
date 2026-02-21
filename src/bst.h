@@ -1,6 +1,8 @@
 #pragma once
 
-#inlcude <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct Node
 {
@@ -17,7 +19,7 @@ typedef struct BST
 // TASK A
 Node* createNode(int value);
 
-Node* insertNode(Node* node, value);
+Node* insertNode(Node* node, int value);
 void bstInsert(BST* tree, int value);
 
 bool nodeContains(Node* node, int value);
