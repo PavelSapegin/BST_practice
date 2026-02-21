@@ -19,9 +19,9 @@ Node* insertNode(Node* node, int value)
         return createNode(value);
 
     if (value < node->value)
-        node->left = insertNode(node, value);
+        node->left = insertNode(node->left, value);
     else if (value > node->value)
-        node->right = insertNode(node, value);
+        node->right = insertNode(node->right, value);
 
     return node;
 }
@@ -50,7 +50,7 @@ bool nodeContains(Node* node, int value)
 bool bstContains(BST* tree, int value)
 {
     if (tree == NULL)
-        return;
+        return false;
 
     return nodeContains(tree->root, value);
 }
