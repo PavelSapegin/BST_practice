@@ -1,7 +1,7 @@
 #include "bst.h"
 #include <stdio.h>
 
-int main()
+int main(void)
 {
     BST tree = { NULL };
 

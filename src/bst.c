@@ -1,4 +1,4 @@
-#include <bst.h>
+#include "bst.h"
 
 Node* createNode(int value)
 {
@@ -10,18 +10,18 @@ Node* createNode(int value)
     newNode->left = NULL;
     newNode->right = NULL;
 
-    return newNode
+    return newNode;
 }
 
-Node* insertNode(Node* node, value)
+Node* insertNode(Node* node, int value)
 {
     if (node == NULL)
         return createNode(value);
 
     if (value < node->value)
-        node->left = insertNode(node, value);
+        node->left = insertNode(node->left, value);
     else if (value > node->value)
-        node->right = insertNode(node, value);
+        node->right = insertNode(node->right, value);
 
     return node;
 }
@@ -49,8 +49,8 @@ bool nodeContains(Node* node, int value)
 
 bool bstContains(BST* tree, int value)
 {
-    if (tree = NULL)
-        return;
+    if (tree == NULL)
+        return false;
 
     return nodeContains(tree->root, value);
 }

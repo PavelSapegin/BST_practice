@@ -6,10 +6,10 @@ int bstHeightRecursive(Node* root)
     if (root == NULL) {
         return 0;
     }
-    int left_height = bstHeightRecursive(root->left);
-    int right_height = bstHeightRecursive(root->right);
+    int leftHeight = bstHeightRecursive(root->left);
+    int rightHeight = bstHeightRecursive(root->right);
 
-    return 1 + (left_height > right_height ? left_height : right_height);
+    return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);
 }
 
 int bstHeight(BST* tree)

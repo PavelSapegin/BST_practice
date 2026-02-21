@@ -1,7 +1,7 @@
 #include "../bst.h"
 #include <stdio.h>
 
-void _bstinorder(Node* root)
+void bstInorder(Node* root)
 {
     Node* curr = root;
 
@@ -9,14 +9,14 @@ void _bstinorder(Node* root)
         return;
 
     if (curr->left != NULL)
-        _bstinorder(curr->left);
+        bstInorder(curr->left);
 
     printf("%d ", curr->value);
 
     if (curr->right != NULL)
-        _bstinorder(curr->right);
+        bstInorder(curr->right);
 }
-void _bstpreorder(Node* root)
+void bstPreorder(Node* root)
 {
     Node* curr = root;
     if (curr == NULL)
@@ -24,23 +24,23 @@ void _bstpreorder(Node* root)
 
     printf("%d ", curr->value);
     if (curr->left != NULL)
-        _bstpreorder(curr->left);
+        bstPreorder(curr->left);
 
     if (curr->right != NULL)
 
-        _bstpreorder(curr->right);
+        bstPreorder(curr->right);
 }
-void _bstpostorder(Node* root)
+void bstPostorder(Node* root)
 {
     Node* curr = root;
     if (curr == NULL)
         return;
 
     if (curr->left != NULL)
-        _bstpostorder(curr->left);
+        bstPostorder(curr->left);
 
     if (curr->right != NULL)
-        _bstpostorder(curr->right);
+        bstPostorder(curr->right);
 
     printf("%d ", curr->value);
 }
@@ -48,15 +48,15 @@ void _bstpostorder(Node* root)
 void bstInorder(BST* tree)
 {
     if (tree != NULL)
-        _bstinorder(tree->root);
+        bstInorder(tree->root);
 }
 void bstPreorder(BST* tree)
 {
     if (tree != NULL)
-        _bstpreorder(tree->root);
+        bstPreorder(tree->root);
 }
 void bstPostorder(BST* tree)
 {
     if (tree != NULL)
-        _bstpostorder(tree->root);
+        bstPostorder(tree->root);
 }

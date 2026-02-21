@@ -27,9 +27,9 @@ void freeNodes(Node* node);
 void bstFree(BST* tree);
 
 // TASK B
-void _bstinorder(Node* root);
-void _bstpreorder(Node* root);
-void _bstpostorder(Node* root);
+void bstInorder(Node* root);
+void bstPreorder(Node* root);
+void bstPostorder(Node* root);
 
 void bstInorder(BST* tree);
 void bstPreorder(BST* tree);
