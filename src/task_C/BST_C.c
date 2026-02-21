@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int bstHeightRecursive(Node* root){
     if (root == NULL){
         return 0;
