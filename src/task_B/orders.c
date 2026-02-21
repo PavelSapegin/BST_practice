@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "bst.h"
+#include "../bst.h"
 
 void _bstinorder(Node *root)
 {
