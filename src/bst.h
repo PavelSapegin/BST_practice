@@ -5,7 +5,7 @@ typedef struct Node
     Node *right;
 }Node;
 
-typedef struct Node
+typedef struct BST
 {
     Node *root;
-};
+}BST;
