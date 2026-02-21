@@ -1,68 +1,68 @@
 #include "../bst.h"
 
-Node* createNode(int value) {
-    Node* newNode = malloc(sizeof(Node));
-    if (newNode == NULL)
-        return NULL;
+Node *createNode(int value) {
+  Node *newNode = malloc(sizeof(Node));
+  if (newNode == NULL)
+    return NULL;
 
-    newNode->value = value;
-    newNode->left = NULL;
-    newNode->right = NULL;
+  newNode->value = value;
+  newNode->left = NULL;
+  newNode->right = NULL;
 
-    return newNode;
+  return newNode;
 }
 
-Node* insertNode(Node* node, int value) {
-    if (node == NULL)
-        return createNode(value);
+Node *insertNode(Node *node, int value) {
+  if (node == NULL)
+    return createNode(value);
 
-    if (value < node->value)
-        node->left = insertNode(node, value);
-    else if (value > node->value)
-        node->right = insertNode(node, value);
+  if (value < node->value)
+    node->left = insertNode(node, value);
+  else if (value > node->value)
+    node->right = insertNode(node, value);
 
-    return node;
+  return node;
 }
 
-void bstInsert(BST* tree, int value) {
-    if (tree == NULL)
-        return;
-    tree->root = insertNode(tree->root, value);
+void bstInsert(BST *tree, int value) {
+  if (tree == NULL)
+    return;
+  tree->root = insertNode(tree->root, value);
 }
 
-bool nodeContains(Node* node, int value) {
-    if (node == NULL)
-        return false;
+bool nodeContains(Node *node, int value) {
+  if (node == NULL)
+    return false;
 
-    if (node->value == value)
-        return true;
+  if (node->value == value)
+    return true;
 
-    else if (value < node->value)
-        return nodeContains(node->left, value);
-    else
-        return nodeContains(node->right, value);
+  else if (value < node->value)
+    return nodeContains(node->left, value);
+  else
+    return nodeContains(node->right, value);
 }
 
-bool bstContains(BST* tree, int value) {
-    if (tree == NULL)
-        return;
+bool bstContains(BST *tree, int value) {
+  if (tree == NULL)
+    return;
 
-    return nodeContains(tree->root, value);
+  return nodeContains(tree->root, value);
 }
 
-void freeNodes(Node* node) {
-    if (node == NULL)
-        return;
+void freeNodes(Node *node) {
+  if (node == NULL)
+    return;
 
-    freeNodes(node->left);
-    freeNodes(node->right);
-    free(node);
+  freeNodes(node->left);
+  freeNodes(node->right);
+  free(node);
 }
 
-void bstFree(BST* tree) {
-    if (tree == NULL)
-        return;
-    
-    freeNodes(tree->root);
-    tree->root = NULL;
+void bstFree(BST *tree) {
+  if (tree == NULL)
+    return;
+
+  freeNodes(tree->root);
+  tree->root = NULL;
 }
