@@ -1,8 +1,11 @@
+#pragma once
+
 typedef struct Node
 {
     int value;
-    Node *left;
-    Node *right;
+    struct Node *left;
+    struct Node *right;
+    
 }Node;
 
 typedef struct BST
