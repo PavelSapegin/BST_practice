@@ -18,7 +18,7 @@ int bstHeight(BST* tree)
         return 0;
     }
 
-    bstHeightRecursive(tree->root);
+    return bstHeightRecursive(tree->root);
 }
 
 int bstSizeRecursive(Node* root)
@@ -36,7 +36,7 @@ int bstSize(BST* tree)
         return 0;
     }
 
-    bstSizeRecursive(tree->root);
+    return bstSizeRecursive(tree->root);
 }
 
 // if tree is empty bstMin will return warning and stop the program
