@@ -1,8 +1,9 @@
-#include <stdio.h>
 #include "bst.h"
+#include <stdio.h>
 
-int main() {
-    BST tree = {NULL};
+int main(void)
+{
+    BST tree = { NULL };
 
     bstInsert(&tree, 100);
     bstInsert(&tree, 1);
