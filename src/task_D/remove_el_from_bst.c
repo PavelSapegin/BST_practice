@@ -1,6 +1,7 @@
 #include "../bst.h"
 
-Node* find_min(Node* root) {
+Node* find_min(Node* root)
+{
     if (root == NULL) {
         return NULL;
     }
@@ -12,7 +13,8 @@ Node* find_min(Node* root) {
     return current;
 }
 
-Node* deleteNode(Node* root, int val, bool* deleted) {
+Node* deleteNode(Node* root, int val, bool* deleted)
+{
     if (root == NULL) {
         return NULL;
     }
@@ -47,7 +49,8 @@ Node* deleteNode(Node* root, int val, bool* deleted) {
     return root;
 }
 
-void bstDelete(BST* tree, int value) {
+void bstDelete(BST* tree, int value)
+{
     if (tree == NULL || tree->root == NULL) {
         return;
     }
