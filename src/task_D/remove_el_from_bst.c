@@ -1,20 +1,18 @@
 #include "../bst.h"
 
-Node *find_min(Node *root)
-{
+Node* find_min(Node* root) {
     if (root == NULL) {
         return NULL;
     }
 
-    Node *current = root;
+    Node* current = root;
     while (current->left != NULL) {
         current = current->left;
     }
     return current;
 }
 
-Node *deleteNode(Node *root, int val, bool *deleted)
-{
+Node* deleteNode(Node* root, int val, bool* deleted) {
     if (root == NULL) {
         return NULL;
     }
@@ -28,19 +26,19 @@ Node *deleteNode(Node *root, int val, bool *deleted)
 
         // case no left
         if (root->left == NULL) {
-            Node *temp = root->right;
+            Node* temp = root->right;
             free(root);
             return temp;
         }
         // case no right
         else if (root->right == NULL) {
-            Node *temp = root->left;
+            Node* temp = root->left;
             free(root);
             return temp;
         }
 
         // case 2 child
-        Node *min_right = find_min(root->right);
+        Node* min_right = find_min(root->right);
         root->value = min_right->value;
         // to avoid overwriting make new deleted flag
         bool temp_deleted = false;
@@ -49,8 +47,7 @@ Node *deleteNode(Node *root, int val, bool *deleted)
     return root;
 }
 
-void bstDelete(BST *tree, int value)
-{
+void bstDelete(BST* tree, int value) {
     if (tree == NULL || tree->root == NULL) {
         return;
     }
