@@ -49,7 +49,7 @@ int bstMin(BST* tree);
 // if tree is empty bstMax will return warning and stop the program
 int bstMax(BST* tree);
 
-//TASK D
+// TASK D
 Node* findMin(Node* root);
 Node* deleteNode(Node* root, int val, bool* deleted);
 void bstDelete(BST* tree, int value);
