@@ -13,16 +13,16 @@ Node* findMin(Node* root)
     return current;
 }
 
-Node* deleteNode(Node* root, int val, bool* deleted)
+Node* deleteNode(Node* root, int value, bool* deleted)
 {
     if (root == NULL) {
         return NULL;
     }
 
-    if (val < root->value) {
-        root->left = deleteNode(root->left, val, deleted);
-    } else if (val > root->value) {
-        root->right = deleteNode(root->right, val, deleted);
+    if (value < root->value) {
+        root->left = deleteNode(root->left, value, deleted);
+    } else if (value > root->value) {
+        root->right = deleteNode(root->right, value, deleted);
     } else {
         *deleted = true;
 
@@ -34,17 +34,17 @@ Node* deleteNode(Node* root, int val, bool* deleted)
         }
         // case no right
         else if (root->right == NULL) {
-            Node* temp = root->left;
+            Node* tempNode = root->left;
             free(root);
-            return temp;
+            return tempNode;
         }
 
         // case 2 child
-        Node* min_right = find_min(root->right);
-        root->value = min_right->value;
+        Node* minRightNode = findMin(root->right);
+        root->value = minRightNode->value;
         // to avoid overwriting make new deleted flag
-        bool temp_deleted = false;
-        root->right = deleteNode(root->right, min_right->value, &temp_deleted);
+        bool tempDeleted = false;
+        root->right = deleteNode(root->right, minRightNode->value, &tempDeleted);
     }
     return root;
 }
