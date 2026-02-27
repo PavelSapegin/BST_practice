@@ -13,19 +13,17 @@ Node* findMin(Node* root)
     return current;
 }
 
-Node* deleteNode(Node* root, int value, bool* deleted)
+Node* deleteNode(Node* root, int value)
 {
     if (root == NULL) {
         return NULL;
     }
 
     if (value < root->value) {
-        root->left = deleteNode(root->left, value, deleted);
+        root->left = deleteNode(root->left, value);
     } else if (value > root->value) {
-        root->right = deleteNode(root->right, value, deleted);
+        root->right = deleteNode(root->right, value);
     } else {
-        *deleted = true;
-
         // case no left
         if (root->left == NULL) {
             Node* temp = root->right;
@@ -42,9 +40,7 @@ Node* deleteNode(Node* root, int value, bool* deleted)
         // case 2 child
         Node* minRightNode = findMin(root->right);
         root->value = minRightNode->value;
-        // to avoid overwriting make new deleted flag
-        bool tempDeleted = false;
-        root->right = deleteNode(root->right, minRightNode->value, &tempDeleted);
+        root->right = deleteNode(root->right, minRightNode->value);
     }
     return root;
 }
@@ -55,6 +51,5 @@ void bstDelete(BST* tree, int value)
         return;
     }
 
-    bool deleted = false;
-    tree->root = deleteNode(tree->root, value, &deleted);
+    tree->root = deleteNode(tree->root, value);
 }
