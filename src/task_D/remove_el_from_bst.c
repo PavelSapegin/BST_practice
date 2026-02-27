@@ -1,6 +1,6 @@
 #include "../bst.h"
 
-Node* find_min(Node* root)
+Node* findMin(Node* root)
 {
     if (root == NULL) {
         return NULL;

@@ -49,6 +49,11 @@ int bstMin(BST* tree);
 // if tree is empty bstMax will return warning and stop the program
 int bstMax(BST* tree);
 
+//TASK D
+Node* findMin(Node* root);
+Node* deleteNode(Node* root, int val, bool* deleted);
+void bstDelete(BST* tree, int value);
+
 // Task E
 void inorderFillArr(Node* root, int* arr, int* index);
 int* mergeSorted(const int* tree1, int tree1size, const int* tree2, int tree2size, int* newSize);
