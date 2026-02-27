@@ -1,5 +1,6 @@
 #pragma once
 
+#include <limits.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,3 +48,13 @@ int bstMin(BST* tree);
 
 // if tree is empty bstMax will return warning and stop the program
 int bstMax(BST* tree);
+
+// Task E
+void inorderFillArr(Node* root, int* arr, int* index);
+int* mergeSorted(const int* tree1, int tree1size, const int* tree2, int tree2size, int* newSize);
+Node* buildBalanced(int* arr, int left, int right);
+BST* bstMerge(BST* tree1, BST* tree2);
+
+// Task F
+bool isNodeValid(const Node* node, long long minVal, long long maxVal);
+bool bstIsValid(BST* tree);
