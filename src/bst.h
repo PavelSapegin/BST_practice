@@ -71,7 +71,6 @@ BST* bstMerge(BST* tree1, BST* tree2);
 bool isNodeValid(const Node* node, long long minVal, long long maxVal);
 bool bstIsValid(BST* tree);
 
-
 // TASK G
 Node* bstKthMinRecursive(Node* node, int* k);
 int bstKthMin(BST* tree, int k);
@@ -83,4 +82,3 @@ Iterator* iteratorInit(BST* tree);
 bool iteratorHasNext(Iterator* it);
 int iteratorNext(Iterator* it);
 void iteratorFree(Iterator* it);
-

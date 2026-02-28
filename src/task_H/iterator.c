@@ -62,4 +62,3 @@ void iteratorFree(Iterator* it)
 
     free(it);
 }
-
