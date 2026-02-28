@@ -4,7 +4,9 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+/*
+VALUE OF MEANING ERROR -- -42
+*/
 typedef struct Node {
     int value;
     struct Node* left;
@@ -14,6 +16,16 @@ typedef struct Node {
 typedef struct BST {
     Node* root;
 } BST;
+
+typedef struct Stack {
+    Node* node;
+    struct Stack* next;
+
+} Stack;
+
+typedef struct Iterator {
+    Stack* top;
+} Iterator;
 
 // TASK A
 Node* createNode(int value);
@@ -58,3 +70,17 @@ BST* bstMerge(BST* tree1, BST* tree2);
 // Task F
 bool isNodeValid(const Node* node, long long minVal, long long maxVal);
 bool bstIsValid(BST* tree);
+
+
+// TASK G
+Node* bstKthMinRecursive(Node* node, int* k);
+int bstKthMin(BST* tree, int k);
+
+// TASK H
+Node* pop(Iterator* it);
+void push(Iterator* it, Node* new);
+Iterator* iteratorInit(BST* tree);
+bool iteratorHasNext(Iterator* it);
+int iteratorNext(Iterator* it);
+void iteratorFree(Iterator* it);
+

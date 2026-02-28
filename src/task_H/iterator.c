@@ -3,7 +3,7 @@
 Node* pop(Iterator* it)
 {
     Node* result = it->top->node;
-    stack* temp = it->top->next;
+    Stack* temp = it->top->next;
     free(it->top);
     it->top = temp;
     return result;
@@ -11,15 +11,15 @@ Node* pop(Iterator* it)
 
 void push(Iterator* it, Node* new)
 {
-    stack* new_top = malloc(sizeof(stack));
-    new_top->node = new;
-    new_top->next = it->top;
-    it->top = new_top;
+    Stack* newTop = malloc(sizeof(Stack));
+    newTop->node = new;
+    newTop->next = it->top;
+    it->top = newTop;
 }
 
 Iterator* iteratorInit(BST* tree)
 {
-    stack* top = NULL;
+    Stack* top = NULL;
     Iterator* it = malloc(sizeof(Iterator));
     it->top = top;
     Node* curr = tree->root;
@@ -57,8 +57,9 @@ void iteratorFree(Iterator* it)
         return;
 
     while (iteratorHasNext(it)) {
-        Node* curr = pop(it);
+        pop(it);
     }
 
     free(it);
 }
+
