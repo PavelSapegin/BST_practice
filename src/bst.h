@@ -51,7 +51,7 @@ int bstMax(BST* tree);
 
 // TASK D
 Node* findMin(Node* root);
-Node* deleteNode(Node* root, int val, bool* deleted);
+Node* deleteNode(Node* root, int val);
 void bstDelete(BST* tree, int value);
 
 // Task E
