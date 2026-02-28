@@ -53,4 +53,3 @@ void bstDelete(BST* tree, int value)
 
     tree->root = deleteNode(tree->root, value);
 }
-
