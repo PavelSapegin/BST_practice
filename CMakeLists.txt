@@ -6,7 +6,6 @@ add_executable(bst
     ./src/task_A/bst.c 
     ./src/task_B/orders.c 
     ./src/task_C/BST_C.c 
-    ./src/task_D/remove_el_from_bst.c 
     ./src/task_E/mergeTrees.c 
     ./src/task_F/checkCorrectness.c
     ./src/task_G/kthMin.c
