@@ -25,8 +25,7 @@ void push(Iterator* it, Node* new)
 
 Iterator* iteratorInit(BST* tree)
 {
-    if (tree == NULL)
-    {
+    if (tree == NULL) {
         printf("Pointer to tree is NULL");
         return NULL;
     }
