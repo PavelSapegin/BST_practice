@@ -19,13 +19,26 @@ Node* bstKthMinRecursive(Node* node, int* k)
 
 int bstKthMin(BST* tree, int k)
 {
-    if ((k <= 0) || (k > bstSize(tree)))
+    if (tree == NULL)
+    {
+        printf("Pointer to tree is NULL");
         return -42;
-
+    }
+    
+    if ((k <= 0) || (k > bstSize(tree)))
+    {
+        printf("Input k is not correct, return a error value = -42");
+        return -42;
+    }
+        
     Node* resNode = bstKthMinRecursive(tree->root, &k);
 
     if (resNode != NULL)
         return resNode->value;
     else
-        return -42;
+        {
+            printf("Input k is not correct, return a error value = -42");
+            return -42;
+        }
+        
 }
