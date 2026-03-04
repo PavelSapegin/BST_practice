@@ -38,7 +38,7 @@ Iterator* iteratorInit(BST* tree)
     Node* curr = tree->root;
     while (curr != NULL) {
         if (!push(it, curr)) {
-            IteratorFree(it);
+            iteratorFree(it);
             return NULL;
         }
         curr = curr->left;
