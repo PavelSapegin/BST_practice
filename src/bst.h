@@ -82,7 +82,7 @@ int bstKthMin(BST* tree, int k);
 
 // TASK H
 Node* pop(Iterator* it);
-void push(Iterator* it, Node* new);
+bool push(Iterator* it, Node* new);
 Iterator* iteratorInit(BST* tree);
 bool iteratorHasNext(Iterator* it);
 int iteratorNext(Iterator* it);

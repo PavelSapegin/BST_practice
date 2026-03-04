@@ -11,16 +11,17 @@ Node* pop(Iterator* it)
     return result;
 }
 
-void push(Iterator* it, Node* new)
+bool push(Iterator* it, Node* new)
 {
     if ((it == NULL) || (new == NULL))
-        return;
+        return false;
     Stack* newTop = malloc(sizeof(Stack));
     if (newTop == NULL)
-        return;
+        return false;
     newTop->node = new;
     newTop->next = it->top;
     it->top = newTop;
+    return true;
 }
 
 Iterator* iteratorInit(BST* tree)
@@ -36,7 +37,10 @@ Iterator* iteratorInit(BST* tree)
     it->top = top;
     Node* curr = tree->root;
     while (curr != NULL) {
-        push(it, curr);
+        if (!push(it, curr)) {
+            IteratorFree(it);
+            return NULL;
+        }
         curr = curr->left;
     }
 
@@ -54,9 +58,12 @@ int iteratorNext(Iterator* it)
 {
     if (iteratorHasNext(it)) {
         Node* resultNode = pop(it);
+        if (resultNode == NULL)
+            return -42;
         Node* curr = resultNode->right;
         while (curr != NULL) {
-            push(it, curr);
+            if (!push(it, curr))
+                return -42;
             curr = curr->left;
         }
 
