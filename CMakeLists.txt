@@ -9,6 +9,8 @@ add_executable(bst
     ./src/task_D/remove_el_from_bst.c 
     ./src/task_E/mergeTrees.c 
     ./src/task_F/checkCorrectness.c
+    ./src/task_G/kthMin.c
+    ./src/task_H/iterator.c
 )
 
 target_compile_options(bst PUBLIC -Wall -Wextra -Wpedantic)
