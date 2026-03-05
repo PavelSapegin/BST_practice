@@ -3,6 +3,7 @@
 ### 1. Какие функции войдут в публичный интерфейс множества, а какие останутся деталями реализации? Правда ли они могут иметь другое название?
 
 **Публичный интерфейс множества:**
+
 - `bstInsert` / `setInsert` — добавление элемента
 - `bstContains` / `setContains` — проверка принадлежности элемента
 - `bstDelete` / `setDelete` — удаление элемента
@@ -11,6 +12,7 @@
 - `iteratorInit`, `iteratorHasNext`, `iteratorNext`, `iteratorFree` — итератор для перебора
 
 **Детали реализации (скрыты от пользователя):**
+
 - работа с узлами: `createNode`, `insertNode`, `nodeContains`, `freeNodes`, `findMin`, `deleteNode`
 - рекурсивные вспомогательные: `bstHeightRecursive`, `bstSizeRecursive`, `bstKthMinRecursive`
 - обходы дерева: `bstInorderRecursive`, `bstPreorderRecursive`, `bstPostorderRecursive`, `bstInorder`, `bstPreorder`, `bstPostorder`
@@ -19,6 +21,7 @@
 - итератор-детали: `push`, `pop`
 
 **Операции, не входящие в стандартный интерфейс множества:**
+
 - `bstMin`, `bstMax` — это функции BST, а не множества
 - `bstKthMin` —  операция для  дерева, не имеет смысла в множестве
 - `bstMerge` — может быть включена как `setUnion`
@@ -32,7 +35,7 @@
 - `bstHeight`, `bstHeightRecursive` — работают со структурой дерева, не множества
 - `bstMin`, `bstMax` — детали BST, не множества
 - `bstKthMin`, `bstKthMinRecursive` —  операция дерева
-- `bstInorder`, `bstPreorder`, `bstPostorder` —  обходы дерева не имеют смысла в интерфейсе множества 
+- `bstInorder`, `bstPreorder`, `bstPostorder` —  обходы дерева не имеют смысла в интерфейсе множества
 - `bstIsValid`, `isNodeValid` — проверка структуры дерева, не множества
 - `push`, `pop` — детали реализации итератора
 
