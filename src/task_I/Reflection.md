@@ -24,7 +24,7 @@
 
 - `bstMin`, `bstMax` - это функции BST, а не множества
 - `bstKthMin` -  операция для  дерева, не имеет смысла в множестве
--bstHeight - это характеристика структуры дерева, а не множества.
+- `bstHeight` - это характеристика структуры дерева, а не множества.
 - `bstMerge` - может быть включена как `setUnion`
 
 **Да, названия могут быть другими** - вместо  `bst` разумно использовать `set` (setInsert, setContains и т.д.), чтобы скрыть конкретную реализацию.
@@ -35,8 +35,8 @@
 
 - `bstHeight`, `bstHeightRecursive` - работают со структурой дерева, не множества
 - `bstMin`, `bstMax` - детали BST, не множества
-- `bstKthMin`, `bstKthMinRecursive` -  операция дерева
-- `bstInorder`, `bstPreorder`, `bstPostorder` -  обходы дерева не имеют смысла в интерфейсе множества
+- `bstKthMin`, `bstKthMinRecursive` - операция дерева
+- `bstInorder`, `bstPreorder`, `bstPostorder` - обходы дерева не имеют смысла в интерфейсе множества
 - `bstIsValid`, `isNodeValid` - проверка структуры дерева, не множества
 - `push`, `pop` - детали реализации итератора
 
